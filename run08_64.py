@@ -257,10 +257,10 @@ for run_idx in range(num_runs):
         print(f"Running: Activation={act_name} at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")   
         results[act_name] = {key: np.array(val) for key, val in history.history.items()}
         print(f"Details in results for round {run_idx:03d}:")
-        for act_name, metrics_dict in results.items():
-            print(f"\nActivation: {act_name}")
-            for metric_name, metric_values in metrics_dict.items():
-                print(f"  {metric_name}: {metric_values}")
+#        for act_name, metrics_dict in results.items():
+#            print(f"\nActivation: {act_name}")
+#            for metric_name, metric_values in metrics_dict.items():
+#                print(f"  {metric_name}: {metric_values}")
 
         np.savez(f"accuracy_{run_idx:03d}_{act_name}.npz", accuracy=np.array(history.history['accuracy']))
         np.savez(f"loss_{run_idx:03d}_{act_name}.npz", loss=np.array(history.history['loss']))
